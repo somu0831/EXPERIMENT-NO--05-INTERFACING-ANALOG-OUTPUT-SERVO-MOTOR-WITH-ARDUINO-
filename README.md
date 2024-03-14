@@ -60,6 +60,7 @@ CIRCUIT DIAGRAM
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
+![image](https://github.com/somu0831/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/162110820/92846f17-d926-444b-a2af-7b53d6c31f3a)
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,7 +75,38 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ~~~
+
+#include<Servo.h>
+Servo heyservo;
+int pos=0;
+void setup()
+{
+  heyservo.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+   for(pos=0;pos<=180;pos++)
+   {
+     heyservo.write(pos);
+     delay(20);
+    // Serial.print("Angle=");
+     Serial.println(pos);
+     
+   }
+   for(pos=180;pos>=0;pos--)
+   {
+     heyservo.write(pos);
+     delay(20);
+     //Serial.print("Angle=");
+     Serial.println(pos);
+
+     
+   }
+}
+~~~
 
 
 
